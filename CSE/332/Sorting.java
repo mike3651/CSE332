@@ -36,14 +36,14 @@ public class Sorting {
     *
     * @param theArgs Arguments from the command line.
     */
-   public static void main(String[] args) throws InterruptedException {      
+   public static void main(String[] args) throws InterruptedException {    
       UI();     
    }
    
    /** 
     * Method that initializes the program.
     */
-   private static void initialize() {
+   private static void initialize() throws InterruptedException {
       fill();
       System.out.print("The original array : ");
       printArray();
@@ -86,9 +86,10 @@ public class Sorting {
     * Private method for reading user input.
     */
    private static void readInput() throws InterruptedException {      
+      initialize();
       System.out.print("Please select an algorithm: ");
       responce = scan.nextInt();      
-      initialize();
+      
       switch(responce) {
          // insertion sort was selected
          case 0:
@@ -120,7 +121,8 @@ public class Sorting {
    /** 
     * Method that prints out the appropriate algorithm choices.
     */
-   public static void printAlgorithms() {      
+   public static void printAlgorithms() {  
+      System.out.println("ALGORITHMS");    
       for (int i = 0; i < ALGORITHMS.length; i++) {
          System.out.println(i + ": "  + ALGORITHMS[i]);
       }       
@@ -132,15 +134,22 @@ public class Sorting {
    /**
     * Method that prints out the array.
     */
-   public static void printArray() {
+   public static void printArray() throws InterruptedException {
       if (SIZE == 0)
-         System.out.println("[]");
+         printString("[]");
          
-      System.out.print("[" + numbers[0]);
+      final StringBuilder sb = new StringBuilder();
+      sb.append("[");
+      sb.append(numbers[0]);
+      //System.out.print("[" + numbers[0]);
       for (int i = 1; i < SIZE; i++) {
-         System.out.print(", "  + numbers[i]);
+         //System.out.print(", "  + numbers[i]);
+         sb.append(", ");
+         sb.append(numbers[i]); 
       }  
-      System.out.println("]");
+      sb.append("]");
+      final String temp = sb.toString();
+      printString(temp);
    }
    
    
@@ -239,6 +248,19 @@ public class Sorting {
       // replace the original array with the sorted values
       for (int i = 0; i < numElements; i++, rightEnd--)
          a[rightEnd] = temp[rightEnd];
+   }
+   
+   /**
+    * This is a special method for printing.
+    *
+    * @param theString The string to print out.
+    */
+   public static void printString(final String theString) throws InterruptedException {
+      for (int i = 0; i < theString.length(); i++) {
+         System.out.print(theString.charAt(i));
+         Thread.sleep(50);
+      }
+      System.out.println();
    }
    
 }
