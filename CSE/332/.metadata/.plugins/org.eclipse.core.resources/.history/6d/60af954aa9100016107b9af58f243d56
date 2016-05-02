@@ -1,0 +1,16 @@
+package Graphical_Interface;
+//Michael Wilson
+//CSE Student project
+//Start Date: May 2, 2016
+//End Date  : 
+
+/** 
+ * This class deals with the GUI buttons.
+ * 
+ * @author Michael Wilson
+ * @version 1.0
+ */
+public class ButtonPanel extends JPanel {
+
+
+}

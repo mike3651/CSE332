@@ -1,0 +1,40 @@
+package Graphical_Interface;
+
+//Michael Wilson
+//CSE Student project
+//Start Date: May 2, 2016
+//End Date  : 
+
+import java.awt.GridLayout;
+
+import javax.swing.JPanel;
+
+/** 
+ * This class deals with the GUI buttons.
+ * 
+ * @author Michael Wilson
+ * @version 1.0
+ */
+public class ButtonPanel extends JPanel {
+	/** Default serialization value. */
+	private static final long serialVersionUID = 1L;
+	
+	/** List of the Algorithms */
+	private static final String[] ALGORITHMS = {"Insertion", "Selection",
+												"Merge", "Heap", "Bubble"};	
+
+	/** 
+	 * Creates the algorithm button panel.
+	 */
+	public ButtonPanel() {
+		setLayout(new GridLayout());
+		addButtons();
+	}
+	
+	/**
+	 * Method that adds the buttons.
+	 */
+	private void addButtons() {
+		
+	}
+}

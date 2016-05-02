@@ -1,0 +1,36 @@
+package Graphical_Interface;
+
+import javax.swing.JPanel;
+
+//Michael Wilson
+//CSE Student project
+//Start Date: May 2, 2016
+//End Date  : 
+
+/**
+ * This class deals with statistics and speed change of the GUI.
+ * 
+ * @author Michael Wilson
+ * @version 1.0
+ */
+public class SpeedPanel extends JPanel{
+	/** Default serial ID. */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Constructs the panel.
+	 */
+	public SpeedPanel() {
+		// set the layout to border
+		super();
+		addComponents();
+	}
+	
+	/** 
+	 * Method that adds the components.
+	 */
+	public void addComponents() {
+		
+	}
+	
+}

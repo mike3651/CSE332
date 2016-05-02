@@ -1,0 +1,61 @@
+package Graphical_Interface;
+
+import java.awt.BorderLayout;
+
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import javax.swing.JSlider;
+
+//Michael Wilson
+//CSE Student project
+//Start Date: May 2, 2016
+//End Date  : 
+
+/**
+ * This class deals with statistics and speed change of the GUI.
+ * 
+ * @author Michael Wilson
+ * @version 1.0
+ */
+public class SpeedPanel extends JPanel{
+	/** Default serial ID. */
+	private static final long serialVersionUID = 1L;
+	
+	/** Maximum speed. */
+	private static final int MAX_SPEED = 5;
+	
+	/** Increment value. */
+	private static final int INCREMENT = 1;
+
+	/**
+	 * Constructs the panel.
+	 */
+	public SpeedPanel() {
+		// set the layout to border
+		super();
+		setLayout(new BorderLayout());
+		addComponents();
+	}
+	
+	/** 
+	 * Method that adds the components.
+	 */
+	private void addComponents() {
+		addSlider();
+	}
+	
+	/** 
+	 * Creates and adds a slider to the panel.
+	 */
+	private void addSlider() {
+		// speed up animation
+		final JSlider speedUp = new JSlider(JSlider.HORIZONTAL,
+											0, MAX_SPEED, 0);
+		speedUp.setMajorTickSpacing(1);
+		speedUp.setPaintTicks(true);
+		speedUp.setPaintLabels(true);
+		final JMenuItem speed = new JMenuItem("Speed");
+		add(speedUp, BorderLayout.SOUTH);
+	}
+	
+}

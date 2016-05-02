@@ -1,0 +1,22 @@
+package Graphical_Interface;
+
+//Michael Wilson
+//CSE Student project
+//Start Date: May 2, 2016
+//End Date  : 
+
+/**
+ * This class deals with statistics and speed change of the GUI.
+ * 
+ * @author Michael Wilson
+ * @version 1.0
+ */
+public class SpeedPanel extends JPanel{
+	/**
+	 * Constructs the panel.
+	 */
+	public SpeedPanel() {
+		
+	}
+	
+}

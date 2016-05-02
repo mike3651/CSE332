@@ -1,0 +1,21 @@
+package Graphical_Interface;
+
+//Michael Wilson
+//CSE Student project
+//Start Date: May 2, 2016
+//End Date  : 
+
+import javax.swing.JFrame;
+
+/** 
+ * This class constructs the window frame for the program.
+ * 
+ * @author Michael Wilson
+ * @version 1.0
+ */
+public class AFrame extends JFrame{
+	public AFrame() {
+		super("Algorithms");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+}

@@ -1,0 +1,16 @@
+package Graphical_Interface;
+// Michael Wilson
+// CSE Student project
+
+
+/**
+ * This class kicks off the whole program.
+ * 
+ * @param theArgs Arguments from the command line.
+ * 
+ * @author Michael Wilson
+ * @version 1.0
+ */
+public class Start {
+
+}
