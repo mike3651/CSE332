@@ -30,11 +30,6 @@ public class Start {
 
 			@Override
 			public void run() {
-				try {
-			        UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
-			    } 
-			    catch (Exception e) {
-			    }
 				new AFrame();
 			}
 			

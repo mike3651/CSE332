@@ -1,0 +1,23 @@
+Reich
+Umbrella 3 $12.50
+
+Flintstone
+Plate 5 $10.00
+Bowl 5 $7.00
+
+Smith
+Microwave 1 $230.00
+Sweater 3 $22.50
+Candle 10 $3.50
+
+Lazlo
+Fridge 1 $1200.00
+Mirror 1 $60.00
+Vase 3 $40.00
+
+Stevenson
+Couch 1 $800.00
+Table 1 $500.00
+Chair 2 $350.00
+Clock 2 $30.00
+
