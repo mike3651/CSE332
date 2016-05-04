@@ -19,7 +19,7 @@ public class Sorting {
    private static final Random RAND = new Random();
    
    /** Strin gof the sorting algorithms. */
-   private static final String[] ALGORITHMS = {"Inserton", "Merge"};
+   private static final String[] ALGORITHMS = {"Inserton", "Merge", "Selection", "Bubble"};
    
    /** Scanner to be used throughout the program. */
    private static final Scanner scan = new Scanner(System.in);
@@ -28,8 +28,7 @@ public class Sorting {
    private static int[] numbers = new int[SIZE];
    
    /** Keeps track of the users responces. */
-   private static int responce;
-
+   private static int responce;   
       
    /**
     * Executes the entire program.
@@ -98,6 +97,12 @@ public class Sorting {
          case 1:
             mergeSort(numbers);
             break;
+         case 2:
+            selectionSort(numbers);
+            break;
+         case 3:
+            bubbleSort(numbers);
+            break;
          default:
             System.err.println("That is not a valid option!\n" 
                +  "Now terminating program...");
@@ -152,6 +157,29 @@ public class Sorting {
       printString(temp);
    }
    
+   /**
+    * Selection Sort
+    * 
+    * @param a The array to sort
+    * 
+    * Worst case RT : O(N^2)
+    * Best case RT  : O(N^2)
+    * AVG case RT   : O(N^2)
+    */
+   public static void selectionSort(int[] a) {
+      for (int i = 0; i < a.length; i++) {
+         // find the smallest element and swap
+         int smallest = i;
+         for (int j = i + 1; j < a.length; j++) {
+            if (a[smallest] > a[j])
+               smallest = j;
+         }
+         // perform the swap
+         int temp = a[i];
+         a[i] = a[smallest];
+         a[smallest] = temp;
+      }      
+   }
    
    /**
     * This method sorts a collection using an insertion sorting algorithm.
@@ -171,6 +199,30 @@ public class Sorting {
          a[j] = temp;
       }
    }
+   
+   /**
+    * Bubble Sort: Bubbles through an array to sort it. Really bad algorithm
+    *
+    * @param a The array to sort.
+    *
+    * Worst case RT : O(N^2)
+    * Worst case RT : O(N^2)
+    * Worst case RT : O(N^2)
+    */
+   public static void bubbleSort(int[] a) {
+      // keep bubbling through the array
+      for (int i = 0; i < a.length - 1; i++) {
+         for (int j = 0; j < a.length - i - 1; j++) {
+            if (a[j] > a[j + 1]) {
+               // bubble swap
+               int temp = a[j];
+               a[j] = a[j + 1];
+               a[j + 1] = temp;
+            }
+         }
+      }   
+   } 
+    
    
    /**
     * This method sorts a collection using an insertion sorting algorithm.
@@ -258,9 +310,8 @@ public class Sorting {
    public static void printString(final String theString) throws InterruptedException {
       for (int i = 0; i < theString.length(); i++) {
          System.out.print(theString.charAt(i));
-         Thread.sleep(50);
+         Thread.sleep(25);
       }
       System.out.println();
    }
-   
 }

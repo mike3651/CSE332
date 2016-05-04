@@ -1,0 +1,5 @@
+package parallelism;
+
+public class SumThread {
+
+}
