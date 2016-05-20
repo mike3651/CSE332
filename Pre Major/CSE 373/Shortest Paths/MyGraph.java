@@ -8,8 +8,12 @@ public class MyGraph implements Graph {
 	// you will need some private fields to represent the graph
 	// you are also likely to want some private helper methods
 
-	// YOUR CODE HERE
-
+	/** Keeps a collection  of vertices. */
+	private List<Vertex> myV;
+	
+	/** Keeps a collection  of edges. */
+	private List<Edge> myE;
+	
 	/**
 	 * Creates a MyGraph object with the given collection of vertices and the
 	 * given collection of edges.
@@ -20,9 +24,8 @@ public class MyGraph implements Graph {
 	 *            a collection of the edges in this graph
 	 */
 	public MyGraph(Collection<Vertex> v, Collection<Edge> e) {
-
-		// YOUR CODE HERE
-
+		myV = v;
+		myE = e;
 	}
 
 	/**
@@ -32,9 +35,7 @@ public class MyGraph implements Graph {
 	 */
 	@Override
 	public Collection<Vertex> vertices() {
-
-		// YOUR CODE HERE
-
+		return myV;
 	}
 
 	/**
@@ -44,9 +45,7 @@ public class MyGraph implements Graph {
 	 */
 	@Override
 	public Collection<Edge> edges() {
-
-		// YOUR CODE HERE
-
+		return myE;
 	}
 
 	/**
@@ -62,9 +61,7 @@ public class MyGraph implements Graph {
 	 */
 	@Override
 	public Collection<Vertex> adjacentVertices(Vertex v) {
-
-		// YOUR CODE HERE
-
+		// Do later
 	}
 
 	/**
@@ -82,9 +79,7 @@ public class MyGraph implements Graph {
 	 */
 	@Override
 	public int edgeCost(Vertex a, Vertex b) {
-
-		// YOUR CODE HERE
-
+		// Do later
 	}
 
 	/**
@@ -103,9 +98,7 @@ public class MyGraph implements Graph {
 	 *             if a or b does not exist.
 	 */
 	public Path shortestPath(Vertex a, Vertex b) {
-
-		// YOUR CODE HERE (you might comment this out this method while doing
-		// Part 1)
+		// wil be doing prims algorithm
 
 	}
 
