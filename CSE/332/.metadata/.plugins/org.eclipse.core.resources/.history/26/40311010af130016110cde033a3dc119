@@ -1,0 +1,46 @@
+package Maps;
+
+import java.util.concurrent.ForkJoinPool;
+
+public class VecAddClient {
+	private VecAddClient() {}
+	
+	// allows the client to deal with asynchronous tasks
+	// forkjointasks allow us to do large computations w/ light threads
+	static final ForkJoinPool fjPool = new ForkJoinPool();
+	
+	// adds two arrays together
+	static int[] add(int[] arr1, int[] arr2) {
+		assert(arr1.length == arr2.length);
+		int[] ans = new int[arr1.length];
+		fjPool.invoke(new VecAdd(0, arr1.length, ans, arr1, arr2));
+		return ans;
+	}
+	
+	/**
+	 * This runs the forkjoinpool framework example.
+	 * 
+	 * @param theArgs The arguments from the command line.
+	 */
+	public static void main(final String[] theArgs) {
+		int[] a1 = {1, 2, 3, 4};
+		int[] a2 = {5, 6, 7, 8};
+		int[] result = add(a1, a2);
+		System.out.println("The threading worked!");
+		System.out.println("The resulting addition of the two arrays is: \n"
+				+ result.toString());
+	}
+	
+	/**
+	 * Method for printing out an array.
+	 * 
+	 * @param arr The array to print out.
+	 */
+	public static void print(int[] arr) {
+		System.out.print("[" + arr[0]);
+		for (int i = 1; i < arr.length; i++) 
+			System.out.print(", " + arr[i]);
+		System.out.println("]");
+	}
+
+}

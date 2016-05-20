@@ -1,0 +1,24 @@
+import java.util.List;
+import java.util.Map;
+
+public class CodingTree {
+	/** The message to encode. */
+	private String theMessage;
+	
+	/** The mapping of characters to binary codes. */
+	private Map<Character, String> codes;
+	
+	/** The message encoded. */
+	private List<Bytes> bits;
+	
+	/** 
+	 * Creates a coding tree with the correct message.
+	 * 
+	 * @param message The message to be compressed.
+	 */
+	public CodingTree(String message) {
+		theMessage = message;
+	}
+	
+
+}

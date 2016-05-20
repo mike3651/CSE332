@@ -1,0 +1,67 @@
+package Maps;
+
+public class VecAdd extends RecursiveAction {
+	/** The initial cutoff to rid of unneeded FJF. */
+	private final int SEQUENTIAL_CUTOFF = 1000;
+	
+	/** The low end for summation. */
+	private int lo;
+	
+	/** The high end for summation. */
+	private int hi;
+	
+	/** The resulting array. */
+	private int[] res;
+	
+	/** The first array to deal with. */
+	private int[] arr1;
+	
+	/** The second array with valuable information. */
+	private int[] arr2;
+	
+	/** 
+	 * Constructs the map
+	 * 
+	 * @param l The low end of the threading
+	 * @param h The high end of the threading
+	 * @param r The initial res array
+	 * @param a1 The first array
+	 * @param a2 The second array
+	 */
+	public VecAdd(int l, int h, int[]r, int[] a1, int[] a2) {
+		lo = l;
+		hi = h;
+		res = r;
+		arr1 = a1;
+		arr2 = a2;
+	}
+	
+	/**
+	 * Method that does the addition in the fork-join style.
+	 */
+	protected void compute() {
+		if (hi - lo < SEQUENTIAL_CUTOFF) {
+			// Does the sum calculations w/out creating new objects
+			for (int i = lo; i < hi; i++)
+				res[i] = arr1[i] + arr2[i];
+		} else {
+			// find the mid point for the calculation cut points
+			int mid = (hi + lo) / 2;
+			
+			// deal with the left side
+			VecAdd left = new VecAdd(lo, mid, res, arr1, arr2);
+			
+			// deal with the right side
+			VecAdd right = new VecAdd(mid, hi, res, arr1, arr2);
+			
+			// start the left side
+			left.fork();
+			
+			// start the right side
+			right.compute();
+			
+			// waits till the second is done then combines
+			left.join();
+		}
+	}
+}
